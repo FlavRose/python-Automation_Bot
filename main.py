@@ -70,6 +70,8 @@ for linha in tabela.index: # Para executar para todos os "produtos" #
     pyautogui.write(str(tabela.loc[linha, "custo"]))
     pyautogui.press("tab")
 
+    # Criando uma condicional para verificar se há algo na (obs) observação do produto antes de escrever #
+    # Se houver algo -> escreva, se não houver nada -> não escreva e pule para próxima etapa #
     obs = tabela.loc[linha, "obs"]
     if not pandas.isna(obs):
         pyautogui.write(str(obs))
@@ -78,9 +80,9 @@ for linha in tabela.index: # Para executar para todos os "produtos" #
     pyautogui.press("tab")
     pyautogui.press("enter")
 
-    pyautogui.scroll(20000) # Voltando ao topo da tela (scrollando) #
+    # Voltando ao topo da tela (scrollando) #
+    pyautogui.scroll(20000)
 
-    # -> Importante não esquecer das indentações!! #
+    # Importante: Não esquecer das indentações!! #
 
-# Para parar a automação basta colocar seu ponteiro do mouse no extremo canto superior esquerdo
-# de sua tela :D #
+# Para parar a automação basta colocar seu ponteiro do mouse no extremo canto superior esquerdo de sua tela :) #
